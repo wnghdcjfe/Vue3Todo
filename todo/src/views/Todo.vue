@@ -1,30 +1,32 @@
 <template>
   <div class="todo">
-    <p class="header-title" @click="setSaying()"><span>{{newSaying}}</span></p>
+    <p class="header-title" @click="setSaying()"><span>{{newSaying}}</span></p> 
     <p class="header-day">{{today}}</p>
     <div class="input-box">
       <input type="text" v-model="newTodo" v-on:keyup.enter="addTodo">
     </div>
     <p class="title-desc">{{todos.length}}개가 남다.</p>
     <ul>
-      <Card v-for="todo in todos" :key="todo.id" :todo="todo"  @delete="removeTodo" @change="changeTodo"/> 
+      <Card v-for="todo in todos" :key="todo.id" :todo="todo" @delete="removeTodo" @change="changeTodo" />
     </ul>
   </div>
 </template>
 
 <script>
   import Card from '../components/Card'
-  import { 
+  import {
     onMounted
   } from 'vue'
-  import {getDate} from '../utils'
+  import {
+    getDate
+  } from '../utils'
   import useTodos from "../hooks/useTodos"
-  import useSaying from "../hooks/useSaying" 
+  import useSaying from "../hooks/useSaying"
   export default {
-    name: 'Todo', 
-  components: {
-    Card
-  },  
+    name: 'Todo',
+    components: {
+      Card
+    },
     setup() {
       const {
         todos,
@@ -32,8 +34,7 @@
         removeTodo,
         newTodo,
         changeTodo
-      } = useTodos()
-
+      } = useTodos() 
       const {
         setSaying,
         newSaying
@@ -41,46 +42,50 @@
 
       onMounted(() => {
         setSaying()
-      })  
+      })
       const today = getDate();
-      return { 
+      return {
         todos,
         addTodo,
         removeTodo,
-        newTodo, 
+        newTodo,
         setSaying,
         newSaying,
-        today, 
+        today,
         changeTodo
       };
     }
   }
 </script>
 
-<style> 
-.header-title:hover{
-  cursor: pointer;
-}
-.header-title{
-  text-align: center;  
-  height:200px; 
-}
-.header-title span{   
-  background-position-y: 0%;
-  background-image: linear-gradient( white 50%, gold 50%);
-  transition: background .5s ease;
-  background-size: 2px;
-  background-size: auto 175%;
-}
+<style>
+  .header-title:hover {
+    cursor: pointer;
+  }
 
-.header-title span:hover {
-  background-position-y: 100%;
+  .header-title {
+    text-align: center;
+    height: 200px;
+  }
 
-} 
-.header-day{
-  text-align: center;
+  .header-title span {
+    background-position-y: 0%;
+    background-image: linear-gradient(white 50%, gold 50%);
+    transition: background .5s ease;
+    background-size: 2px;
+    background-size: auto 175%;
+  }
+
+  .header-title span:hover {
+    background-position-y: 100%;
+
+  }
+
+  .header-day {
+    text-align: center;
     color: #eb596e;
-}
+  }
+
   .placeholder {
     width: 100%;
     height: 80px;
@@ -97,7 +102,7 @@
     width: 500px;
     margin: 0 auto;
   }
- 
+
   .input-box>input {
     max-height: 32px;
     flex: 1 1 auto;

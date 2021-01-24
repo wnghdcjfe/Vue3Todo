@@ -30,8 +30,7 @@
                     const value = {
                         ...props.todo, 
                         done : !props.todo.done
-                    }
-                    console.log(value)
+                    } 
                     context.emit('change', value); 
                 },
                 deleteTodo: () => {

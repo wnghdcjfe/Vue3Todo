@@ -1,19 +1,6 @@
-# Vue3Todo
-실행
-```
-npm install
-npm run serve
-```
-참...
-```
-npm install -g @vue/cli
-vue create my-project
-```
+# Vuex + vue3로 만드는 할일 앱
+유투브 강의 링크(youtube) : https://youtu.be/imnKWOkM_JY 
+배포 링크(link) : https://gracious-thompson-4aeadd.netlify.app/ 
 
-
-    "@vue/composition-api": "^0.2.1",
-    "core-js": "^2.6.5",
-    "material-design-icons-iconfont": "^5.0.1",
-    "vue": "^2.6.10",
-    "vue-router": "^3.1.2", 
-    "vuex": "^3.1.1"
+## 모습
+![화면 기록 2021-01-25 오전 7 53 58](https://user-images.githubusercontent.com/6982437/105646323-b22f5b80-5ee2-11eb-9002-4837526078c7.gif)

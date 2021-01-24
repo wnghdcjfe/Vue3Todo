@@ -10,8 +10,7 @@ export default createStore({
     }, 
     mutations: {
         SET_TODO(state, payload) {
-            state.todos = [...state.todos, payload]
-            console.log(state.todos)
+            state.todos = [...state.todos, payload] 
             localStorage.setItem("todo",JSON.stringify(state.todos))
         },
         DELETE_TODO(state, payload) {
@@ -31,7 +30,6 @@ export default createStore({
     }, 
     actions: {
         ADD_TODO({ commit }, payload) {
-            console.log(payload)
             commit('SET_TODO', payload)
         },
         REMOVE_TODO({ commit }, payload) {
