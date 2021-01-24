@@ -6,9 +6,6 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 
-import VueContentPlaceholders from 'vue-content-placeholders'
-
-createApp(App)
-.use(VueContentPlaceholders)
+createApp(App) 
 .use(router)
 .use(store).mount('#app')

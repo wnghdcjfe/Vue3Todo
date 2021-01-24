@@ -23,8 +23,7 @@
             }
         },
         setup(props, context) {  
-            const done = computed(() => props.todo.done)
-            console.log(done.value)
+            const done = computed(() => props.todo.done) 
             return {
                 done,
                 toggleTodo: () => { 
